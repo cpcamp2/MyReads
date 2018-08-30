@@ -31,7 +31,7 @@ class BooksApp extends Component {
     return (
       <Switch>
         <Route exact path="/" render={() => <MainPage books={this.state.books} handleShelfChange={this.handleShelfChange} />} />
-        <Route path="/search" component={SearchPage} />
+        <Route path="/search" render={() => <SearchPage books={this.state.book} handleShelfChange={this.handleShelfChange} />} />
       </Switch>
     )
   }
