@@ -16,6 +16,7 @@ class SearchPage extends Component {
   handleBookSearch = (query) => {
     if (query.length !== 0) {
       BooksAPI.search(query).then((books) => {
+        books = this.setDefaultShelf(books)
         this.setState({ books });
       });
     } else {
@@ -26,7 +27,19 @@ class SearchPage extends Component {
     }
   }
 
+  setDefaultShelf = (books) => {
+    const myBooks = this.props.books
 
+    for (let book of books) {
+      book.shelf = "none"
+      for (let myBook of myBooks) {
+        if (myBook.id === book.id) {
+          book.shelf = myBook.shelf;
+        }
+      };
+    };
+    return books
+  }
 
   render() {
     return (
@@ -48,7 +61,7 @@ class SearchPage extends Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-            {this.state.books.map((book) => (<Book key={book.id} book={book} onChange={(shelf) => this.props.handleShelfChange(book, shelf)}/>))}
+            {this.state.query.length > 0 && this.state.books.map((book) => (<Book key={book.id} book={book} onChange={(shelf) => this.props.handleShelfChange(book, shelf)}/>))}
           </ol>
         </div>
       </div>
