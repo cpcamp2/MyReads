@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as BooksAPI from '../BooksAPI';
 import Book from './Book';
 
 class SearchPage extends Component {
@@ -9,9 +10,20 @@ class SearchPage extends Component {
 
   onChange = (e) => {
     this.setState({query: e.target.value});
+    this.handleBookSearch(e.target.value);
   }
 
+  handleBookSearch = (query) => {
+    BooksAPI.search(query, 10).then((books) => {
+      this.setState({ books });
+    });
+  }
+
+
+
   render() {
+    console.log(this.state.books)
+    console.log(this.state.query)
     return (
       <div className="search-books">
         <div className="search-books-bar">

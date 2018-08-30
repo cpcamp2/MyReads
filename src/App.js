@@ -27,11 +27,11 @@ class BooksApp extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <Switch>
         <Route exact path="/" render={() => <MainPage books={this.state.books} handleShelfChange={this.handleShelfChange} />} />
-        <Route path="/search" render={() => <SearchPage books={this.state.book} handleShelfChange={this.handleShelfChange} />} />
+        <Route path="/search" render={() => <SearchPage books={this.state.books} handleShelfChange={this.handleShelfChange} />} />
       </Switch>
     )
   }
