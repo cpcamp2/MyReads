@@ -160,7 +160,7 @@ class BookShelfPage extends Component {
             </div>
           </div>
           <div className="open-search">
-            <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+            <a href="/search">Add a book</a>
           </div>
         </div>
       </div>
