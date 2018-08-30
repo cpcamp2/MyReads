@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Book from './Book';
 
 class SearchPage extends Component {
   state = {
@@ -11,7 +12,6 @@ class SearchPage extends Component {
   }
 
   render() {
-    console.log(this.state.query)
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -30,7 +30,9 @@ class SearchPage extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <ol className="books-grid">
+            {this.state.books.map((book) => (<Book key={book.id} book={book} onChange={(shelf) => this.props.handleShelfChange(book, shelf)}/>))}
+          </ol>
         </div>
       </div>
     );
