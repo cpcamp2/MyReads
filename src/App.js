@@ -20,7 +20,7 @@ class BooksApp extends Component {
     console.log(this.state);
     return (
       <Switch>
-        <Route exact path="/" render={() => <MainPage books={this.state.books}} />
+        <Route exact path="/" render={() => <MainPage books={this.state.books} />} />
         <Route path="/search" component={SearchPage} />
       </Switch>
     )
