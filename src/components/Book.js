@@ -1,12 +1,11 @@
 import React from 'react';
 
-const bookImage = book.imageLinks.thumbnail;
 
 const Book = ({book}) => (
   <li>
     <div className="book">
       <div className="book-top">
-        <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${bookImage})` }}></div>
+        <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
         <div className="book-shelf-changer">
           <select>
             <option value="move" disabled>Move to...</option>
