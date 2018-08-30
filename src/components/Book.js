@@ -16,8 +16,8 @@ const Book = ({book}) => (
           </select>
         </div>
       </div>
-      <div className="book-title">The Adventures of Tom Sawyer</div>
-      <div className="book-authors">Mark Twain</div>
+      <div className="book-title">{book.title}</div>
+      <div className="book-authors">{book.authors[0]}</div>
     </div>
   </li>
 );
