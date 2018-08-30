@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router';
 // import * as BooksAPI from './BooksAPI';
-import BookShelfPage from './components/BookShelfPage';
+import MainPage from './components/MainPage';
 import SearchPage from './components/SearchPage';
 import './App.css';
 
@@ -18,7 +18,7 @@ class BooksApp extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={BookShelfPage} />
+        <Route exact path="/" component={MainPage} />
         <Route path="/search" component={SearchPage} />
       </Switch>
     )
