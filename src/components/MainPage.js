@@ -15,9 +15,9 @@ class MainPage extends Component {
           </div>
           <div className="list-books-content">
             <div>
-              <BookShelf title={'Currently Reading'} books={booksCurrentlyReading} />
-              <BookShelf title={'Want to Read'} books={booksWantToRead} />
-              <BookShelf title={'Read'} books={booksRead} />
+              <BookShelf title={'Currently Reading'} books={booksCurrentlyReading} handleShelfChange={this.props.handleShelfChange} />
+              <BookShelf title={'Want to Read'} books={booksWantToRead} handleShelfChange={this.props.handleShelfChange} />
+              <BookShelf title={'Read'} books={booksRead} handleShelfChange={this.props.handleShelfChange} />
             </div>
           </div>
           <div className="open-search">
